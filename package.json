@@ -8,7 +8,7 @@
   },
   "keywords": [
     "node",
-    "server"
+    "tools"
   ],
   "bin": {
     "zlc": "./index.js"
@@ -16,7 +16,10 @@
   "author": "kaneki",
   "license": "MIT",
   "devDependencies": {
-    "express": "^4.16.3",
-    "serve-index": "^1.9.1"
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.4.0",
+    "require-dir": "^1.0.0"
   }
 }
