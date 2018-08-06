@@ -10,6 +10,9 @@ const path = require('path')
 zlc.task('build', (...args) => {
     tools.build.apply(tools, args)
 })
+zlc.task("default", function () {
+    tools.connect()
+})
 // 生成配置
 zlc.task("config", function () {
     const data = fs.readFileSync(path.join(__dirname, 'config', 'zlcfile.js'), 'utf-8')

@@ -4,6 +4,8 @@ const path = require('path')
 const zlc = require('./zlc')
 const config = require('../config/zlcconfig')
 const compiler = require('./compiler')
+const connect = require('gulp-connect')
+const getPort = require('get-port')
 
 
 class Tools {
@@ -19,6 +21,21 @@ class Tools {
             console.log("end build!")
         })
     }
+
+    // 启动服务监听
+    connect() {
+        const root = config.dist()
+        let port = 0
+        (async () => {
+            port = await getPort({port: config.server.port || 8080})
+            
+        })()
+        connect.server({
+            root: root,
+            port: config.server.port || 8080
+        })
+    }
+
 }
 
 module.exports = new Tools()

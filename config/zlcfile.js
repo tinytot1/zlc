@@ -1,4 +1,7 @@
 module.exports = {
+    server: {
+        port: 8080
+    },
     build: {
         js: [
             {
