@@ -36,6 +36,7 @@ class Compiler {
                 this.build(k, task)
             })
         }
+        callback()
     }
 }
 

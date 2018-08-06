@@ -1,9 +1,9 @@
 const compiler = require('../compiler')
 const gulp = require('gulp')
-const gulpIf = require('gulp-if')
+const gulpif = require('gulp-if')
 const concat = require('gulp-concat')
-const rename = require('gulp-rename')
 const path = require("path")
+var uglify = require('gulp-uglify')
 
 compiler.defined('js', function () {
     this.compile = (task, options, cb) => {
@@ -12,7 +12,9 @@ compiler.defined('js', function () {
         // 是否合并
         const merge = path.extname(dist) === '.js'
         gulp.src(task.src)
-            .pipe(gulpIf(merge, concat(path.basename(dist))))
+            .pipe(gulpif(merge, concat(path.basename(dist))))
+            .pipe(uglify())
             .pipe(gulp.dest(merge ? path.dirname(dist) : dist))
+            .on("end", cb || function () { });
     }
 })
