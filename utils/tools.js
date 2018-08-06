@@ -6,6 +6,7 @@ const config = require('../config/zlcconfig')
 const compiler = require('./compiler')
 const connect = require('gulp-connect')
 const getPort = require('get-port')
+const watch = require("gulp-watch")
 
 
 class Tools {
@@ -25,14 +26,15 @@ class Tools {
     // 启动服务监听
     connect() {
         const root = config.dist()
-        let port = 0
-        (async () => {
-            port = await getPort({port: config.server.port || 8080})
-            
-        })()
-        connect.server({
-            root: root,
-            port: config.server.port || 8080
+        getPort({ port: config.server.port }).then((port) => {
+            connect.server({
+                root: root,
+                port: port,
+                livereload: true
+            })
+            watch(config.dist('**/*.*'), (file) => {
+                console.log(`changed:  ${file.history}`)
+            }).pipe(connect.reload())
         })
     }
 

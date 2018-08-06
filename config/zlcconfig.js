@@ -4,11 +4,13 @@ let cwd = process.cwd()
 var fs = require("fs")
 
 const config = {
+    server: {
+        port: 8080,
+    },
     dist: 'dist',
     build: {
     }
 };
-const dist = config.dist || 'dist'
 const zlcPath = path.join(cwd, 'zlcfile.js')
 // 用户配置的zlcfile.js
 const user = fs.existsSync(zlcPath)
@@ -19,6 +21,8 @@ if (user) {
         config[k] = zlc[k]
     }
 }
+
+const dist = !user ? "" : (config.dist || "dist")
 
 config.dist = (...args) => {
     let arr = [cwd, dist]
