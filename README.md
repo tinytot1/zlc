@@ -3,12 +3,14 @@
 ZLC is a front-end development tool based on webpack and gulp, which supports the separation and development of the front and rear ends.
 
 ### Installation
+
 Install with npm:
 ```js
 npm install smt -g
 ```
 
 ### Introduction
+
 - Build projects quickly
 - Start the static service
 - Monitor file changes, refresh the page in real time.
@@ -16,6 +18,7 @@ npm install smt -g
 - Front-end separation and service forwarding.
 - ES6 to ES5, improved js code browser compatibility
 ### Command list
+
 | command        | instructions  
 | --------       | :-----   |
 | zlc        | Start the static service      |
@@ -24,6 +27,7 @@ npm install smt -g
 | zlc -v        | Check the currently installed zlc version      |
 
 ### Sample zlcfile.js
+
 ```js
 {
     // Service agent forwarding
