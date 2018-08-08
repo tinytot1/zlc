@@ -1,6 +1,14 @@
 module.exports = {
     server: {
-        port: 8080
+        port: 8080,
+        // 代理
+        proxy: {
+            '/data': {
+                target: 'http://localhost:8080',
+                changeOrigin: true,
+                //ws: true // proxy websockets 
+            },
+        }
     },
     build: {
         js: [

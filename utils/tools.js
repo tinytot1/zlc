@@ -7,6 +7,7 @@ const compiler = require('./compiler')
 const connect = require('gulp-connect')
 const getPort = require('get-port')
 const watch = require("gulp-watch")
+const proxy = require('http-proxy-middleware')
 
 
 class Tools {
@@ -30,7 +31,20 @@ class Tools {
             connect.server({
                 root: root,
                 port: port,
-                livereload: true
+                livereload: true,
+                middleware: function (connect, opt) {
+                    const p = function () {
+                        // 服务转发，可以配置多个
+                        var a = []
+                        if (config.server.proxy) {
+                            for (let [k, v] of Object.entries(config.server.proxy)) {
+                                a.push(proxy(k, v))
+                            }
+                        }
+                        return a
+                    }
+                    return p()
+                }
             })
             watch(config.dist('**/*.*'), (file) => {
                 console.log(`changed:  ${file.history}`)

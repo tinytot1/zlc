@@ -1,40 +1,41 @@
 {
-    "name": "zlc",
-    "version": "1.0.2",
-    "description": "Node Command Line server manager tools",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "node",
-        "tools"
-    ],
-    "bin": {
-        "zlc": "./index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/zhanghuai/zlc.git"
-    },
-    "author": "kaneki",
-    "license": "MIT",
-    "devDependencies": {
-        "babel-preset-es2015": "^6.24.1",
-        "babel-preset-es2017": "^6.24.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "get-port": "^4.0.0",
-        "gulp": "^3.9.1",
-        "gulp-changed": "^3.2.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-connect": "^5.5.0",
-        "gulp-cssmin": "^0.2.0",
-        "gulp-if": "^2.0.2",
-        "gulp-rename": "^1.4.0",
-        "gulp-replace": "^1.0.0",
-        "gulp-uglify": "^3.0.1",
-        "gulp-watch": "^5.0.1",
-        "require-dir": "^1.0.0",
-        "through2": "^2.0.3"
-    }
+  "name": "zlc",
+  "version": "1.0.2",
+  "description": "Node Command Line server manager tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "tools"
+  ],
+  "bin": {
+    "zlc": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhanghuai/zlc.git"
+  },
+  "author": "kaneki",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "get-port": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "http-proxy-middleware": "^0.18.0",
+    "require-dir": "^1.0.0",
+    "through2": "^2.0.3"
+  }
 }
