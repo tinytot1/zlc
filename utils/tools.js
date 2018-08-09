@@ -5,7 +5,7 @@ const zlc = require('./zlc')
 const config = require('../config/zlcconfig')
 const compiler = require('./compiler')
 const connect = require('gulp-connect')
-const getPort = require('get-port')
+const portfinder = require('portfinder')
 const watch = require("gulp-watch")
 const proxy = require('http-proxy-middleware')
 
@@ -27,7 +27,9 @@ class Tools {
     // 启动服务监听
     connect() {
         const root = config.dist()
-        getPort({ port: config.server.port }).then((port) => {
+
+        portfinder.basePort = config.server.port
+        portfinder.getPortPromise().then(port => {
             connect.server({
                 root: root,
                 port: port,
@@ -49,6 +51,8 @@ class Tools {
             watch(config.dist('**/*.*'), (file) => {
                 console.log(`changed:  ${file.history}`)
             }).pipe(connect.reload())
+        }).catch(err => {
+            console.log(`get port err: ${err}`)
         })
     }
 
