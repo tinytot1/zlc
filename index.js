@@ -12,6 +12,7 @@ zlc.task('build', (...args) => {
 })
 zlc.task("default", function () {
     tools.connect()
+    tools.watch()
 })
 // 生成配置
 zlc.task("config", function () {

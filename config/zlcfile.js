@@ -2,14 +2,15 @@ module.exports = {
     server: {
         port: 8080,
         // 代理
-        proxy: {
-            '/data': {
-                target: 'http://localhost:8080',
-                changeOrigin: true,
-                //ws: true // proxy websockets 
-            },
-        }
+        // proxy: {
+        //     '/data': {
+        //         target: 'http://localhost:8080',
+        //         changeOrigin: true,
+        //         //ws: true // proxy websockets 
+        //     },
+        // }
     },
+    dist: "dist",
     build: {
         js: [
             {

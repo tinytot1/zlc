@@ -1,8 +1,7 @@
 const compiler = require('../compiler')
 const gulp = require('gulp')
-const path = require("path")
 
-compiler.defined('other', function () {
+compiler.defined('others', function () {
     this.compile = (task, options, cb) => {
         // 编译的目录文件
         const dist = task.dist

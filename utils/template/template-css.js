@@ -5,6 +5,7 @@ const concat = require('gulp-concat')
 const cssmin = require('gulp-cssmin')
 const rename = require('gulp-rename')
 const path = require("path")
+const autoprefixer = require('gulp-autoprefixer')
 
 compiler.defined('css', function () {
     this.compile = (task, options, cb) => {
@@ -14,6 +15,10 @@ compiler.defined('css', function () {
         const merge = path.extname(dist) === '.css'
         gulp.src(task.src)
             .pipe(gulpif(merge, concat(path.basename(dist))))
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
             .pipe(cssmin())
             // .pipe(rename({ suffix: '.min' }))
             .pipe(gulp.dest(merge ? path.dirname(dist) : dist))

@@ -21,7 +21,7 @@ class Compiler {
      */
     build(compilerName, task, options, cb) {
         const compile = this.compilers.get(compilerName)
-        compile.compile(task)
+        compile.compile(task, {}, cb)
     }
 
     /**
@@ -32,7 +32,7 @@ class Compiler {
     all(cfg, callback = function () { }) {
         // 循环每个对象js\html\pug...
         for (let [k, v] of Object.entries(cfg.build)) {
-            v.map((task) => {
+            v.map(task => {
                 this.build(k, task)
             })
         }
