@@ -6,7 +6,7 @@ ZLC is a front-end development tool based on webpack and gulp, which supports th
 
 Install with npm:
 ```js
-npm install smt -g
+npm install zlc -g
 ```
 
 ### Introduction
