@@ -1,10 +1,9 @@
 {
     "presets": [
-        "es2015",
+        "env",
         "stage-2"
     ],
     "plugins": [
-        "transform-es2015-typeof-symbol",
         [
             "transform-runtime",
             {
@@ -12,8 +11,7 @@
                 "polyfill": false,
                 "regenerator": false
             }
-        ],
-        "transform-vue-jsx"
+        ]
     ],
     "comments": false
 }

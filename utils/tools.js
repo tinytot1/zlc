@@ -1,6 +1,6 @@
 const requireDir = require('require-dir')
 const path = require('path')
-const zlc = require('./zlc')
+const fs = require('fs')
 const config = require('../config/zlcconfig')
 const compiler = require('./compiler')
 const connect = require('gulp-connect')
@@ -13,7 +13,14 @@ class Tools {
     constructor() {
 
     }
-
+    copyBabel(cwd = process.cwd) {
+        const dir = path.join(cwd, ".babelrc")
+        console.log(dir, 'asssss')
+        if (!fs.existsSync(dir)) {
+            const c = fs.readFileSync(path.join(__dirname, "../.babelrc"), "utf-8")
+            fs.writeFileSync(dir, c)
+        }
+    }
     build(...args) {
         console.log('start build all:')
         // 调用 compiler 文件的每个 js， 构造编译文件对应的 compiler

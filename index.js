@@ -8,9 +8,11 @@ const path = require('path')
 
 // 注册编译命令
 zlc.task('build', (...args) => {
+    tools.copyBabel(zlc.cwd);
     tools.build.apply(tools, args)
 })
 zlc.task("default", function () {
+    tools.copyBabel(zlc.cwd);
     tools.connect()
     tools.watch()
 })
