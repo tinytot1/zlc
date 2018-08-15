@@ -15,7 +15,6 @@ class Tools {
     }
     copyBabel(cwd = process.cwd) {
         const dir = path.join(cwd, ".babelrc")
-        console.log(dir, 'asssss')
         if (!fs.existsSync(dir)) {
             const c = fs.readFileSync(path.join(__dirname, "../.babelrc"), "utf-8")
             fs.writeFileSync(dir, c)
