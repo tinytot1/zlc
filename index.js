@@ -26,7 +26,9 @@ zlc.task("-v", function () {
     let data = fs.readFileSync(path.join(__dirname, 'package.json'), 'utf-8')
     try {
         data = JSON.parse(data)
-    } catch { }
+    } catch (e) {
+        console.log(`err:${e}`)
+    }
     console.log(`v${data.version}`)
 })
 zlc.run()
