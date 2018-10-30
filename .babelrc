@@ -4,9 +4,9 @@
         "stage-2"
     ],
     "plugins": [
+        "transform-vue-jsx",
         [
             "transform-runtime",
-            "transform-vue-jsx",
             {
                 "helpers": false,
                 "polyfill": false,
