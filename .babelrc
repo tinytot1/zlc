@@ -1,18 +1,10 @@
 {
     "presets": [
-        "env",
-        "stage-2"
+        "env"
     ],
     "plugins": [
-        "transform-vue-jsx",
-        [
-            "transform-runtime",
-            {
-                "helpers": false,
-                "polyfill": false,
-                "regenerator": false
-            }
-        ]
+        "transform-runtime",
+        "transform-vue-jsx"
     ],
     "comments": false
 }
