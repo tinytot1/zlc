@@ -1,6 +1,6 @@
 {
   "name": "zlc",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "Node Command Line server manager tools",
   "main": "index.js",
   "scripts": {
@@ -20,15 +20,21 @@
   "author": "kaneki",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-helper-vue-jsx-merge-props": "^2.0.3",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "babel-core": "^6.10.4",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-async-await": "^1.0.0",
+    "babel-plugin-transform-es2015-typeof-symbol": "^6.23.0",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-plugin-transform-vue-jsx": "^3.4.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-register": "^6.0.0",
+    "babel-runtime": "^6.9.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
@@ -45,10 +51,6 @@
     "gulp-watch": "^5.0.1",
     "http-proxy-middleware": "^0.18.0",
     "portfinder": "^1.0.16",
-    "require-dir": "^1.1.0",
-    "transform-runtime": "^0.0.0"
-  },
-  "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "require-dir": "^1.1.0"
   }
 }
