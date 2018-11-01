@@ -8,6 +8,15 @@ const connect = require('gulp-connect')
 const watch = require("gulp-watch")
 const proxy = require('http-proxy-middleware')
 
+//-------将smt下的node_modules加到环境中--------------
+var ms = require("module");
+let f = ms._nodeModulePaths;
+ms._nodeModulePaths = function () {
+    let p = f.apply(ms, arguments);
+    p.push(path.join(__dirname, "../node_modules"));
+    p.push(path.join(__dirname, "../"));
+    return p;
+}
 
 class Tools {
     constructor() {

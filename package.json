@@ -1,6 +1,6 @@
 {
   "name": "zlc",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Node Command Line server manager tools",
   "main": "index.js",
   "scripts": {
@@ -41,6 +41,7 @@
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
     "http-proxy-middleware": "^0.18.0",
+    "module": "^1.2.5",
     "portfinder": "^1.0.16",
     "require-dir": "^1.1.0"
   },
