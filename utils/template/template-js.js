@@ -5,6 +5,8 @@ const babel = require('gulp-babel')
 const concat = require('gulp-concat')
 const path = require("path")
 const uglify = require('gulp-uglify')
+const plumber = require('gulp-plumber')
+const notify = require('gulp-notify')
 const config = require('../../config/zlcconfig')
 
 compiler.defined('js', function () {
@@ -13,7 +15,7 @@ compiler.defined('js', function () {
         const dist = task.dist
         // 是否合并
         const merge = path.extname(dist) === '.js'
-        const g = gulp.src(task.src)
+        const g = gulp.src(task.src).pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
         if (config.replace) {
             g.pipe(replace(config.replace.src, config.replace.value))
         }

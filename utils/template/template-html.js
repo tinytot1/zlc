@@ -4,6 +4,8 @@ const gulpif = require('gulp-if')
 const rename = require('gulp-rename')
 const replace = require('gulp-replace')
 const path = require("path")
+const plumber = require('gulp-plumber')
+const notify = require('gulp-notify')
 const config = require('../../config/zlcconfig')
 
 compiler.defined('html', function () {
@@ -12,7 +14,7 @@ compiler.defined('html', function () {
         const dist = task.dist
         // 是否合并
         const merge = path.extname(dist) === '.html'
-        const g = gulp.src(task.src)
+        const g = gulp.src(task.src).pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
         if (config.replace) {
             g.pipe(replace(config.replace.src, config.replace.value))
         }

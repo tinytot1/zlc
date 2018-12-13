@@ -5,6 +5,8 @@ const concat = require('gulp-concat')
 const rename = require('gulp-rename')
 const stylus = require('gulp-stylus')
 const path = require("path")
+const plumber = require('gulp-plumber')
+const notify = require('gulp-notify')
 const autoprefixer = require('gulp-autoprefixer')
 
 compiler.defined('styl', function () {
@@ -13,7 +15,7 @@ compiler.defined('styl', function () {
         const dist = task.dist
         // 是否合并
         const merge = path.extname(dist) === '.styl'
-        gulp.src(task.src)
+        gulp.src(task.src).pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
             .pipe(gulpif(merge, concat(path.basename(dist))))
             .pipe(stylus({
                 compress: true,
