@@ -1,6 +1,6 @@
 {
   "name": "zlc",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "Node Command Line server manager tools",
   "main": "index.js",
   "scripts": {

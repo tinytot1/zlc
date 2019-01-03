@@ -7,6 +7,7 @@ const path = require("path")
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
+const replace = require('gulp-replace')
 const config = require('../../config/zlcconfig')
 
 compiler.defined('js', function () {
