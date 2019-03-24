@@ -1,6 +1,6 @@
 {
   "name": "zlc",
-  "version": "1.5.8",
+  "version": "1.6.0",
   "description": "Node Command Line server manager tools",
   "main": "index.js",
   "scripts": {
@@ -42,6 +42,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
     "gulp-stylus": "^2.7.0",
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
